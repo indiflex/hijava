@@ -3,6 +3,7 @@ package hijava.practice;
 public class N {
 	int x = 10;
 	int y = 20;
+	//aaa
 	
 	public void swap() {
 		int t = x;
