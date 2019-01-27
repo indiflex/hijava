@@ -16,4 +16,8 @@ public class Son extends Mom {
 	public void ttt() {
 		System.out.println("TTT");
 	}
+
+	public void drinkMilk() {
+		System.out.println("Drinking Milk!!");
+	}
 }

@@ -9,7 +9,28 @@ public class Main {
 	public static void main(String[] args) {
 //		al();
 //		momAndSon();
-		koreanAndAmerican();
+		drinkTest();
+//		koreanAndAmerican();
+	}
+
+	private static void drinkTest() {
+		Mom mom = new Mom();
+		Mom son = new Son();
+		
+		drink(mom);
+		drink(son);
+	}
+
+	private static void drink(Mom m) {
+		if (m instanceof Son) {
+//			Son s = (Son)m;
+//			s.drinkMilk();
+			
+			((Son)m).drinkMilk();
+			
+		} else {
+			m.drinkBeer();
+		}
 	}
 
 	private static void koreanAndAmerican() {
@@ -28,11 +49,25 @@ public class Main {
 		Mom mom = new Mom();
 		Son son = new Son();
 		
-		mom.eat();
-		son.eat();
+//		mom.eat();
+//		son.eat();
+		eat(mom);
+		eat(son);
 		
-		mom.say();
-		son.say();
+//		mom.say();
+//		son.say();
+	}
+	
+	private static void eat(Mom m) {
+		if (m instanceof Son) {
+			System.out.println("먹어~");
+			
+		} else if (m instanceof Mom) {
+			System.out.println("드세요~");
+			
+		} else {
+			System.out.println("드십시오!");
+		}
 	}
 
 	private static void al() {
