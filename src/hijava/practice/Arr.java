@@ -7,7 +7,33 @@ public class Arr {
 //		ex2();
 //		ex3();
 //		ex4();
-		ex5();
+//		ex5();
+		ex6();
+	}
+
+	private static void ex6() {
+		int upperStart = 65;
+		int lowerStart = 97;
+		
+		int[] starts = new int[] { upperStart, lowerStart };
+		char[][] arr = new char[2][26];
+		
+		int len  = starts.length;
+		for (int start = 0; start < len; start++) {
+			for ( int i = 0; i < 26; i++) {
+				int x = i + starts[start];
+//				System.out.println(x + "=" +(char)x);
+				arr[start][i] = (char)x;
+			}
+		}
+		
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+		
 	}
 
 	private static void ex5() {

@@ -52,7 +52,7 @@ public class Man {
 	}
 
 	public static void main(String[] args) {
-		Man hong = new Man("Hong");
+		Man hong = new Man();
 		Man john = new Man("John");
 		
 		hong.buyCoffee(1);
