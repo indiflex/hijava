@@ -8,6 +8,23 @@ public class Main {
 
 	public static void main(String[] args) {
 //		al();
+//		momAndSon();
+		koreanAndAmerican();
+	}
+
+	private static void koreanAndAmerican() {
+		Man korean = new Korean("홍길동");
+		American american = new American("John");
+		
+		sayHi(korean); 
+		sayHi(american);
+	}
+	
+	private static void sayHi(Man man) {
+		man.sayHello();
+	}
+
+	private static void momAndSon() {
 		Mom mom = new Mom();
 		Son son = new Son();
 		
