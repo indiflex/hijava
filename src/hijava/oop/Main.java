@@ -1,13 +1,15 @@
 package hijava.oop;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import hijava.practice.Man;
 
 public class Main {
 
-	public static void main(String[] args) {
-		netsport();
+	public static void main(String[] args) throws SQLException, IOException {
+//		netsport();
 //		animal();
 //		weight();
 		
@@ -24,6 +26,37 @@ public class Main {
 //		drinkTest();
 //		eatTest();
 //		koreanAndAmerican();
+		
+//		software();
+//		calculator();
+		
+		testinterface();
+	}
+
+	private static void testinterface() throws SQLException, IOException {
+		TestInterface ti = new TestImpl();
+		ti.select("select * from Table");
+		TestInterface.out(100);
+		
+		Dog.eat("Meat");
+	}
+
+	private static void calculator() {
+		Calculator calc = new CalculatorImpl();
+		int x = 10, y = 5;
+		calc.add(x, y);
+		calc.div(x, y);
+		calc.div(x, 0);
+	}
+
+	private static void software() {
+		SoftWare site = new WebSite();
+		SoftWare app = new MobileApp();
+		
+		String s = "abc";
+		
+		site.product();
+		app.product();
 	}
 
 	private static void netsport() {
