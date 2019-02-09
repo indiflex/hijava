@@ -7,11 +7,13 @@ import hijava.practice.Man;
 public class Main {
 
 	public static void main(String[] args) {
-		AbstSuper sp = new AbstChild();
-		int i = 5;
-		int j = 10;
+		weight();
 		
-		System.out.println("min=" + sp.min(i, j) +", max=" + sp.max(i, j));
+//		AbstSuper sp = new AbstChild();
+//		int i = 5;
+//		int j = 10;
+//		
+//		System.out.println("min=" + sp.min(i, j) +", max=" + sp.max(i, j));
 		
 //		long token = System.currentTimeMillis();
 		
@@ -20,6 +22,15 @@ public class Main {
 //		drinkTest();
 //		eatTest();
 //		koreanAndAmerican();
+	}
+
+	private static void weight() {
+		Weight guen = new Guen();
+		Weight pound= new Pound();
+		
+		int cnt = 5;
+		System.out.println("Guen=" + guen.getGram(cnt));
+		System.out.println("Pound=" + pound.getGram(cnt));
 	}
 
 	private static void eatTest() {
