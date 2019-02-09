@@ -7,7 +7,8 @@ import hijava.practice.Man;
 public class Main {
 
 	public static void main(String[] args) {
-		weight();
+		animal();
+//		weight();
 		
 //		AbstSuper sp = new AbstChild();
 //		int i = 5;
@@ -22,6 +23,18 @@ public class Main {
 //		drinkTest();
 //		eatTest();
 //		koreanAndAmerican();
+	}
+
+	private static void animal() {
+		Animal dog = new Dog();
+		Animal cat = new Cat();
+		
+		barkAnimal(dog);
+		barkAnimal(cat);
+	}
+
+	private static void barkAnimal(Animal ani) {
+		ani.bark();
 	}
 
 	private static void weight() {
