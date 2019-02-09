@@ -7,7 +7,8 @@ import hijava.practice.Man;
 public class Main {
 
 	public static void main(String[] args) {
-		animal();
+		netsport();
+//		animal();
 //		weight();
 		
 //		AbstSuper sp = new AbstChild();
@@ -23,6 +24,14 @@ public class Main {
 //		drinkTest();
 //		eatTest();
 //		koreanAndAmerican();
+	}
+
+	private static void netsport() {
+		NetSport pp = new PingPong();
+		NetSport te = new Tennis();
+		pp.play();
+		System.out.println("-----------");
+		te.play();
 	}
 
 	private static void animal() {
