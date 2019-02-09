@@ -6,3 +6,4 @@ public abstract class AbstChild2 extends AbstSuper {
 		return i > j ? i + 100 : j + 1000;
 	}
 }
+ 
