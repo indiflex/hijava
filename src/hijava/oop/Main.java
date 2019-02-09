@@ -7,10 +7,37 @@ import hijava.practice.Man;
 public class Main {
 
 	public static void main(String[] args) {
+		AbstSuper sp = new AbstChild();
+		int i = 5;
+		int j = 10;
+		
+		System.out.println("min=" + sp.min(i, j) +", max=" + sp.max(i, j));
+		
+//		long token = System.currentTimeMillis();
+		
 //		al();
 //		momAndSon();
-		drinkTest();
+//		drinkTest();
+//		eatTest();
 //		koreanAndAmerican();
+	}
+
+	private static void eatTest() {
+		Man korean = new Korean("홍길동");
+		American american = new American("John");
+		
+//		eat(korean);
+		eat(american);
+	}
+
+	private static void eat(Man m) {
+		if (m instanceof Korean) {
+			((Korean)m).eatRice();
+		} else if (m instanceof American) {
+			((American)m).eatBread();
+		} else {
+			System.out.println("해당 인스턴스가 없습니다!!");
+		}
 	}
 
 	private static void drinkTest() {
