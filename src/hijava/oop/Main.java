@@ -32,7 +32,21 @@ public class Main {
 		
 //		testinterface();
 		
-		total();
+//		total();
+		
+		calcoper();
+	}
+
+	private static void calcoper() {
+		int x = 10, y = 5;
+		
+		CalcOper op = new CalcOper();
+		int a = op.add(x, y);
+		int s = op.sub(x, y);
+		System.out.println(a + ", " + s);
+		
+		op.mul(x, y);
+		op.div(x, y);
 	}
 
 	private static void total() {
