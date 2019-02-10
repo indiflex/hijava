@@ -3,6 +3,7 @@ package hijava.oop;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import hijava.practice.Man;
 
@@ -34,7 +35,21 @@ public class Main {
 		
 //		total();
 		
-		calcoper();
+//		calcoper();
+		scanner();
+	}
+
+	private static void scanner() {
+		System.out.print("문자열을 입력하세요>> ");
+		Scanner scanner = new Scanner(System.in);
+		String msg = scanner.nextLine();
+		System.out.println("Msg=" + msg);
+		
+		System.out.print("숫자를 입력하세요>> ");
+		double inputNum = scanner.nextDouble();
+		System.out.println("Input Number is " + inputNum);
+		
+		scanner.close();
 	}
 
 	private static void calcoper() {
