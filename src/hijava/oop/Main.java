@@ -36,7 +36,49 @@ public class Main {
 //		total();
 		
 //		calcoper();
-		scanner();
+//		scanner();
+		scanner2();
+	}
+
+	private static void scanner2() {
+		Scanner scanner = new Scanner(System.in);
+		
+		while(true) {
+			String ret = inputScan(scanner, "계산하시겠어요?(계산:enter, 종료:quit)");
+			if ("quit".equalsIgnoreCase(ret))
+				break;
+			
+			int x = inputScanNumber(scanner, "첫번째 숫자(x)를 입력하세요>> ");
+			int y = inputScanNumber(scanner, "두번째 숫자(y)를 입력하세요>> ");
+			
+			String op = inputScan(scanner, "연산자(* 또는 /)를 입력하세요>> ");
+			
+			CalcOper co = new CalcOper();
+			System.out.print(x + " " + op + " " + y + " = ");
+			
+			if ("*".equals(op)) {
+				co.mul(x, y);
+				
+			} else if ("/".equals(op)) {
+				co.div(x, y);
+				
+			} else {
+				System.out.println("연산자를 정확히 입력하세요!!");
+			}
+		}
+		
+		
+		scanner.close();
+	}
+
+	private static int inputScanNumber(Scanner scanner, String msg) {
+		int x = Integer.parseInt(inputScan(scanner, msg));
+		return x;
+	}
+	
+	private static String inputScan(Scanner scanner, String msg) {
+		System.out.print(msg);
+		return scanner.nextLine();
 	}
 
 	private static void scanner() {
