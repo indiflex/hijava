@@ -80,17 +80,33 @@ public class Student implements Cloneable {
 //		Student s2 = (Student) s.clone();
 //		System.out.println(s2);
 		
-		StringBuilder sb = new StringBuilder();
-		sb.append("aaaaaaaa");
-		System.out.println("sb1=" + sb.toString());
-		sb.setLength(0);
-		System.out.println("sb2=" + sb.toString());
+		boolean hasCondition = true;
+		String searchStr = "홍길동";
+		String s = "select * from Tbl";
+		if (hasCondition) {
+			s = s + " where name like '%" + searchStr + "%";
+			s += " and id > 0";
+			s += " limit 10";
+		}
 		
-		StringBuffer sf = new StringBuffer();
-		sf.append("aaaaaaaa");
-		System.out.println("sb1=" + sf.toString());
-		sf.setLength(0);
-		System.out.println("sb2=" + sf.toString());
+		StringBuilder sb = new StringBuilder();
+		sb.append("select * from Tbl");
+		if (hasCondition) {
+			sb.append(" where name like '%").append(searchStr).append("%");
+			sb.append(100).append('T');
+		}
+		
+		
+//		sb.append("aaaaaaaa");
+//		System.out.println("sb1=" + sb.toString());
+//		sb.setLength(0);
+//		System.out.println("sb2=" + sb.toString());
+//		
+//		StringBuffer sf = new StringBuffer();
+//		sf.append("aaaaaaaa");
+//		System.out.println("sb1=" + sf.toString());
+//		sf.setLength(0);
+//		System.out.println("sb2=" + sf.toString());
 
 //		String s1 = new String("123abc");
 //		String s2 = "123abc";
