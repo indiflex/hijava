@@ -57,17 +57,31 @@ public class Man {
 	}
 
 	public static void main(String[] args) {
-		Man hong = new Man();
-		Man john = new Man("John");
+		Man hong = new Man("Hong");
+		Man kim = new Man("Kim");
+		Man kildong = hong;
+		Man ilsoo = new Man("Kim");
 		
-		hong.buyCoffee(1);
-		hong.buyDonut(2);
+		System.out.println("hong hash=" + hong.hashCode());
+		System.out.println("kim hash=" + kim.hashCode());
+		System.out.println("kildong hash=" + kildong.hashCode());
+		System.out.println( System.identityHashCode(kildong) );
+			
+//		System.out.println(hong.equals(kim));
+//		System.out.println(hong.equals(kildong));
+//		System.out.println(ilsoo.equals(kim));
 		
-		john.buyCoffee(2);
-		john.buyDonut(1);
-		
-		System.out.println(hong);
-		System.out.println(john);
+//		Man hong = new Man();
+//		Man john = new Man("John");
+//		
+//		hong.buyCoffee(1);
+//		hong.buyDonut(2);
+//		
+//		john.buyCoffee(2);
+//		john.buyDonut(1);
+//		
+//		System.out.println(hong);
+//		System.out.println(john);
 	}
 
 }
