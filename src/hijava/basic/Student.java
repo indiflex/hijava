@@ -1,8 +1,20 @@
 package hijava.basic;
 
-public class Student implements Cloneable {
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Vector;
+
+public class Student implements Cloneable, Comparable<Student> {
 	private int id;
-	private String name;
+	public String name;
+	
+	public Student() {
+		this.name = "Guest";
+	}
 
 	public Student(int id, String name) {
 		this.id = id;
@@ -74,27 +86,68 @@ public class Student implements Cloneable {
 		// return this.id == other.id && this.name != null &&
 		// this.name.equals(other.name);
 	}
+	
+	@Override
+	public int compareTo(Student o) {
+		System.out.println("comp=" + this.id + "-" + o.id);
+		return this.id - o.id;
+	}
 
-	public static void main(String[] args) throws CloneNotSupportedException {
-//		Student s = new Student(921234, "홍길동");
+	public static void main(String[] args) throws Exception {
+		Student s = new Student(100, "홍길동");
 //		Student s2 = (Student) s.clone();
 //		System.out.println(s2);
+//		System.out.println(s.getClass() + ", " + s.getClass().getSimpleName());
 		
-		boolean hasCondition = true;
-		String searchStr = "홍길동";
-		String s = "select * from Tbl";
-		if (hasCondition) {
-			s = s + " where name like '%" + searchStr + "%";
-			s += " and id > 0";
-			s += " limit 10";
-		}
+		String inputStr = "hijava.basic.Student";
+		Class<?> cls = Class.forName(inputStr);
+		Package pkg = cls.getPackage();
+		System.out.println("pkg=" + pkg);
 		
-		StringBuilder sb = new StringBuilder();
-		sb.append("select * from Tbl");
-		if (hasCondition) {
-			sb.append(" where name like '%").append(searchStr).append("%");
-			sb.append(100).append('T');
-		}
+//		for (Constructor c: cls.getConstructors())
+//			System.out.println("constructor=" + c);
+//		for (Field f : cls.getFields())
+//			System.out.println("field=" + f);
+//		for (Method m : cls.getMethods()) {
+//			System.out.println("method=" + m.getName());
+//			if ("getName".equals(m.getName())) {
+ ////				m.invoke(null, null);
+//			}
+//		}
+		
+		Student newStu = (Student)cls.newInstance();
+//		Student newStu = new Student();
+		System.out.println(newStu);
+		Method setnameMethod = cls.getMethod("setName", String.class);
+		setnameMethod.invoke(newStu, "홍길동");
+		Method getnameMethod = cls.getMethod("getName");
+		Method setidMethod = cls.getMethod("setId", int.class);
+		setidMethod.invoke(newStu, 100);
+		System.out.println("newStu.name=" + getnameMethod.invoke(newStu));
+		System.out.println(newStu);
+		
+//		Student s2 = (Student)cls.newInstance();
+		
+		
+//		boolean hasCondition = true;
+//		String searchStr = "길";
+//		String s = "select * from Tbl";
+//		if (hasCondition) {
+//			s = s + " where name like '%" + searchStr + "%";
+//			s += " and id > 0";
+//			s += " limit 10";
+//		}
+//		
+//		StringBuilder sb = new StringBuilder();
+//		sb.append("select * from Tbl");
+//		if (hasCondition) {
+//			sb.append(" where name like '%").append(searchStr).append("%");
+//			sb.append(100).append('T');
+//		}
+//		
+//		s = sb.toString();
+//		
+//		sb.setLength(0);
 		
 		
 //		sb.append("aaaaaaaa");
@@ -132,5 +185,7 @@ public class Student implements Cloneable {
 		// System.out.println("s1 equals s3 =" + s3.equals(s1)); // true
 
 	}
+
+	
 
 }
