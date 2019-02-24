@@ -1,6 +1,6 @@
 package hijava.practice;
 
-public class Fonacci {
+public class Finacci {
 
 	public static void main(String[] args) {
 		int inum = 10;
