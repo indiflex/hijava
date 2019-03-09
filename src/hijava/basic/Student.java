@@ -84,7 +84,7 @@ public class Student implements Cloneable, Comparable<Student> {
 	@Override
 	public int compareTo(Student o) {
 		System.out.println("comp=" + this.id + "-" + o.id);
-		return (this.id - o.id) * 1;
+		return (this.id - o.id) * -1;
 	}
 
 	public static void main(String[] args) throws Exception {
